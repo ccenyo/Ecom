@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<project basedir="." default="build-war" name="Ecom">
-              	<target name="build-war">
+<project basedir="." default="pre-build-war" name="Ecom">
+  	<target name="pre-build-war">
+		<exec executable="service tomcat7 stop"></exec>
+  		<delete file="/var/lib/tomcat7/webapps/Ecom.war"/>
+  		<delete dir="/var/lib/tomcat7/webapps/Ecom"/>
+  	</target>
+              	<target name="build-war" depends="pre-build-war" > 
 
-              	   <war destfile="ecom.war" webxml="WebContent/WEB-INF/web.xml">
+              	   <war destfile="/var/lib/tomcat7/webapps/Ecom.war" webxml="WebContent/WEB-INF/web.xml">
               	      <fileset dir="WebContent">
               	         <include name="**/*.*"/>
               	      </fileset>
               	      </war>
-              	    
               	</target>
+  	<target name="post-build-war" depends="build-war">
+		<exec executable="service tomcat7 start"></exec>
+  	</target>
 </project>
