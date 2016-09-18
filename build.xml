@@ -2,7 +2,9 @@
 
 <project basedir="." default="pre-build-war" name="Ecom">
   	<target name="pre-build-war">
-		<exec executable="service tomcat7 stop"></exec>
+		<exec executable="/bin/sh">
+		<arg value="./stop" />
+		</exec>
   		<delete file="/var/lib/tomcat7/webapps/Ecom.war"/>
   		<delete dir="/var/lib/tomcat7/webapps/Ecom"/>
   	</target>
@@ -15,6 +17,8 @@
               	      </war>
               	</target>
   	<target name="post-build-war" depends="build-war">
-		<exec executable="service tomcat7 start"></exec>
+		<exec executable="/bin/sh">
+		<arg value="./start" />
+		</exec>
   	</target>
 </project>
