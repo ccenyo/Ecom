@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<project basedir="." default="pre-build-war" name="Ecom">
+<project basedir="." default="post-build-war" name="Ecom">
   	<target name="pre-build-war">
 		<exec executable="/bin/bash">
 		<arg value="stop.sh" />
