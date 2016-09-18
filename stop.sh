@@ -1,1 +1,1 @@
-sudo service tomcat7 stop
+service tomcat7 stop

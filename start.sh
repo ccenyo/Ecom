@@ -1,1 +1,1 @@
-sudo service tomcat7 start
+service tomcat7 start
