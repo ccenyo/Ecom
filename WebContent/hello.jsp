@@ -7,6 +7,6 @@
 <title>First webapp</title>
 </head>
 <body>
-Hello word with jenkins first.
+Hello word.
 </body>
 </html>
