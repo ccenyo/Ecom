@@ -2,7 +2,7 @@
 
 <project basedir="." default="post-build-war" name="Ecom"> 
   	<target name="pre-build-war">
-		<exec executable="/bin/bash">
+		<exec executable="/bin/bash"> 
 		<arg value="stop.sh" />
 		</exec>
   		<delete file="/var/lib/tomcat7/webapps/Ecom.war"/>
